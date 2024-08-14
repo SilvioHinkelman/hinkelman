@@ -1,16 +1,15 @@
 "use client";
 
-import ThemeSwitcher from "@/components/theme-switcher";
 import Image from "next/image";
 import profileOne from "../../public/images/3x4.jpg";
 import profileTwo from "../../public/images/cria-silvio.jpg";
 import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState(profileOne);
   const { theme } = useTheme();
-  const textRef = useRef(null);
 
   const handleHover = () => {
     setImageSrc((prev) => (prev === profileOne ? profileTwo : profileOne));
@@ -19,20 +18,6 @@ export default function Home() {
   useEffect(() => {
     setImageSrc((prev) => (prev === profileOne ? profileTwo : profileOne));
   }, [theme]);
-
-  useEffect(() => {
-    if (textRef.current) {
-      typeWriter(textRef.current);
-    }
-  }, []);
-
-  const typeWriter = (element: any) => {
-    const textoArray = element.innerHTML.split("");
-    element.innerHTML = "";
-    textoArray.forEach((letra: string, i: number) => {
-      setTimeout(() => (element.innerHTML += letra), 75 * i);
-    });
-  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5">
@@ -49,18 +34,32 @@ export default function Home() {
               onMouseLeave={handleHover}
             />
           </div>
-          <div className="bg-green-50">
-            <h1 className="bg-red-100">Olá me chamo</h1>
-            <h1
-              ref={textRef}
-              className="typewriter max-w-max text sm:text-xl md:text-3xl text-gray-700 border-r-gray-700 dark:text-gray-300 font-semibold"
-            >
-              Silvio da Costa Hinkelman
-            </h1>
-          </div>
+          <h1>654654</h1>
+          <TypeAnimation
+            aria-hidden="true"
+            wrapper="h1"
+            className="text sm:text-xl md:text-3xl text-gray-700 border-r-gray-700 dark:text-gray-300 font-semibold"
+            sequence={["Silvio da Costa Hinkelman"]}
+          />
         </div>
-        <ThemeSwitcher />
       </div>
+      <a href="/rota">rota</a>
+      <TypeAnimation
+        sequence={[
+          "One a", // Types 'One'
+          1000, // Waits 1s
+          "Two", // Deletes 'One' and types 'Two'
+          2000, // Waits 2s
+          "Two Three", // Types 'Three' without deleting 'Two'
+          () => {
+            console.log("Sequence completed");
+          },
+        ]}
+        wrapper="span"
+        cursor={true}
+        //  repeat={Infinity}
+        style={{ fontSize: "2em", display: "inline-block" }}
+      />
     </main>
   );
 }

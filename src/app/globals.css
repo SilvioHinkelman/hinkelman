@@ -67,30 +67,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@layer components {
-  .typewriter {
-    text-align: center;
-    margin: 60px auto;
-    font-family: "Courier New", Courier, monospace;
-    color: #fff;
-  }
-
-  .typewriter::after {
-    content: "|";
-    opacity: 1;
-    margin-left: 1px;
-    display: inline-block;
-    animation: blink 0.7s infinite;
-  }
-
-  @keyframes blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
-}
