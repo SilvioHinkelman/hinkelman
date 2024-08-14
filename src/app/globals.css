@@ -68,21 +68,29 @@
   }
 }
 
-.typing-effect {
-  animation: typing 5s steps(25), blink-caret 0.8s infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
+@layer components {
+  .typewriter {
+    text-align: center;
+    margin: 60px auto;
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
   }
-}
 
-@keyframes blink-caret {
-  40% {
-    border-color: rgba(255, 255, 255, 0.2);
+  .typewriter::after {
+    content: "|";
+    opacity: 1;
+    margin-left: 1px;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
   }
 }
