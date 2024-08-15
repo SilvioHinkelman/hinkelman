@@ -5,6 +5,12 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { LuSun } from "react-icons/lu";
 import { RiMoonLine } from "react-icons/ri";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const ThemeSwitcher: React.FC = () => {
   const { setTheme, theme } = useTheme();
@@ -16,15 +22,18 @@ const ThemeSwitcher: React.FC = () => {
   };
 
   return (
-    <div className="flex">
-      <Button onClick={handleClick} size="icon">
-        {!toggle ? (
-          <RiMoonLine size={20} className="hover:animate-pulse" />
-        ) : (
-          <LuSun size={20} className="hover:animate-pulse " />
-        )}
-      </Button>
-    </div>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button onClick={handleClick} size="icon">
+            {!toggle ? <RiMoonLine size={20} /> : <LuSun size={20} />}
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Tema</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 
