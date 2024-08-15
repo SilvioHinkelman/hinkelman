@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 import { BtnsHeader, butns } from "@/constants/header";
 import { useEffect, useState } from "react";
+import { bungee } from "@/app/fonts";
+import Link from "next/link";
 
 const Header = () => {
   const [time, setTime] = useState(new Date());
@@ -17,8 +19,6 @@ const Header = () => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
-
-    // Limpeza do intervalo quando o componente for desmontado
     return () => clearInterval(timer);
   }, []);
 
@@ -28,17 +28,21 @@ const Header = () => {
     const seconds = date.getSeconds().toString().padStart(2, "0");
     return `${hours}:${minutes}:${seconds}`;
   };
-  console.log("TCL: Header -> time", time);
+  //console.log("TCL: Header -> time", time);
 
   return (
     <header className="flex bg-orange-200 justify-center p-1 md:p-5">
       <div className="flex w-full max-w-[1920px] justify-between items-center">
-        <h1 className="text-gray-950">{formatTime(time)}</h1>
+        {/*   <h1 className={`${bungee.className} bg-white p-2 text-[#ef5a31]`}>
+          {formatTime(time)}
+        </h1> */}
+        <Link href="/aqui">rota</Link>
+        <h1 className={`${bungee.className}`}>564</h1>
         <div className="flex gap-2">
           <TooltipProvider>
             {butns.map((btn: BtnsHeader) => {
               return (
-                <Tooltip>
+                <Tooltip key={btn.key}>
                   <TooltipTrigger asChild>
                     <a
                       href={btn?.link}

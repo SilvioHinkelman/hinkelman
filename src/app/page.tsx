@@ -6,10 +6,12 @@ import profileTwo from "../../public/images/cria-silvio.jpg";
 import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { TypeAnimation } from "react-type-animation";
+import { bungee } from "@/app/fonts";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState(profileOne);
   const { theme } = useTheme();
+  const [animationKey, setAnimationKey] = useState(0);
 
   const handleHover = () => {
     setImageSrc((prev) => (prev === profileOne ? profileTwo : profileOne));
@@ -17,6 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     setImageSrc((prev) => (prev === profileOne ? profileTwo : profileOne));
+    setAnimationKey((prevKey) => prevKey + 1);
   }, [theme]);
 
   return (
@@ -35,12 +38,15 @@ export default function Home() {
             />
           </div>
           <h1>654654</h1>
-          <TypeAnimation
-            aria-hidden="true"
-            wrapper="h1"
-            className="text sm:text-xl md:text-3xl text-gray-700 border-r-gray-700 dark:text-gray-300 font-semibold"
-            sequence={["Silvio da Costa Hinkelman"]}
-          />
+          <h1 className={`${bungee.className} `}>
+            <TypeAnimation
+              key={animationKey}
+              aria-hidden="true"
+              wrapper="h1"
+              className="text sm:text-xl md:text-3xl text-blue-700 border-r-gray-700 dark:text-red-900 font-semibold "
+              sequence={["Silvio da Costa Hinkelman"]}
+            />
+          </h1>
         </div>
       </div>
       <a href="/rota">rota</a>
