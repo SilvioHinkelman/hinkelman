@@ -28,14 +28,14 @@ console.log("TCL: ");
 export default function Rota() {
   return (
     <div>
-      {array.map((x: any) => {
+      {array.map((x: any, n: number) => {
         return (
-          <div>
+          <div key={n}>
             <h1>
               {x.title}
               <div className="flex gap-8">
                 {x.items.map((f: any, o: number) => {
-                  return <h1>{f.video}</h1>;
+                  return <h1 key={o}>{f.video}</h1>;
                 })}
               </div>
             </h1>
