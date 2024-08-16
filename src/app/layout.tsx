@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/providers/theme-provider";
 import Header from "@/components/Header";
 
-export const nunito = Nunito({
+const inter = Inter({ subsets: ["latin"] });
+/* export const nunito = Nunito({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-});
+}); */
 
 export const metadata: Metadata = {
   title: "Silvio Hinkelman",
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={nunito.className}>
+      <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system">
           <Header />
           {children}
