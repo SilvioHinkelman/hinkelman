@@ -2,7 +2,15 @@ import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaFileDownload } from "react-icons/fa";
 
-export const butns: BtnsHeader[] = [
+export interface ButtonsHeaderType {
+  key: number;
+  icon: any;
+  link: string;
+  tooltip: string;
+  down: boolean;
+}
+
+export const ButtonsHeader: ButtonsHeaderType[] = [
   {
     key: 1,
     icon: <FaFileDownload size={20} />,
@@ -28,10 +36,17 @@ export const butns: BtnsHeader[] = [
   },
 ];
 
-export interface BtnsHeader {
-  key: number;
-  icon: any;
-  link: string;
-  tooltip: string;
-  down: boolean;
-}
+export const TypeAnimation = [
+  { text: "React" },
+  { text: "Next" },
+  { text: "React Native" },
+  { text: "Node" },
+];
+
+const concatenatedText = TypeAnimation.map((item) => item.text).join(" | ");
+
+export const animationSequence = TypeAnimation.map((item) => [
+  item.text,
+  500,
+]).flat();
+animationSequence.push(concatenatedText);

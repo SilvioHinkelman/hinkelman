@@ -7,13 +7,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { BtnsHeader, butns } from "@/constants/header";
+import { ButtonsHeader, ButtonsHeaderType } from "@/constants/header";
 import { useEffect, useState } from "react";
 import { bungee } from "@/app/fonts";
-import Link from "next/link";
 
 const Header = () => {
   const [time, setTime] = useState(new Date());
+  const hours = parseInt(time.getHours().toString().padStart(2, "0"));
+  const saudation =
+    hours < 12 ? "Bom dia" : hours < 18 ? "Boa tarde" : "Boa noite";
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,21 +28,25 @@ const Header = () => {
     const hours = date.getHours().toString().padStart(2, "0");
     const minutes = date.getMinutes().toString().padStart(2, "0");
     const seconds = date.getSeconds().toString().padStart(2, "0");
-    return `${hours}:${minutes}:${seconds}`;
+    return `${hours} : ${minutes} : ${seconds}`;
   };
-  //console.log("TCL: Header -> time", time);
 
   return (
-    <header className="flex bg-orange-200 justify-center p-1 md:p-5">
-      <div className="flex w-full max-w-[1920px] justify-between items-center">
-        {/*   <h1 className={`${bungee.className} bg-white p-2 text-[#ef5a31]`}>
-          {formatTime(time)}
-        </h1> */}
-        <Link href="/aqui">rota</Link>
-        <h1 className={`${bungee.className}`}>564</h1>
-        <div className="flex gap-2">
+    <header className="flex justify-center p-1 md:p-5">
+      <div className="flex w-full max-w-[1920px] justify-between items-center gap-7 flex-wrap-reverse p-2">
+        <h1
+          className={`bold text-2xl md:text-4xl font-black`}
+        >{`${saudation}`}</h1>
+        <div className="flex justify-center grow">
+          <h1
+            className={`${bungee.className} bg-white text-xs md:text-2xl py-2 px-3 animate-pulse rounded-3xl text-[#ef5a31] ml-auto md:m-auto`}
+          >
+            {formatTime(time)}
+          </h1>
+        </div>
+        <div className="flex gap-2 ml-auto">
           <TooltipProvider>
-            {butns.map((btn: BtnsHeader) => {
+            {ButtonsHeader.map((btn: ButtonsHeaderType) => {
               return (
                 <Tooltip key={btn.key}>
                   <TooltipTrigger asChild>
