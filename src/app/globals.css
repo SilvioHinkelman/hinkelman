@@ -67,22 +67,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-.typing-effect {
-  animation: typing 5s steps(25), blink-caret 0.8s infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink-caret {
-  40% {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-}
