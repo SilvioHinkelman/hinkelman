@@ -7,7 +7,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/ui/tooltip";
 import { ButtonsHeader, ButtonsHeaderType } from "@/constants/header";
 import { useEffect, useState } from "react";
 import { bungee } from "@/app/fonts";
@@ -39,8 +39,8 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-center p-1 md:p-5">
-      <div className="flex w-full max-w-[1920px] justify-between items-center gap-7 flex-wrap-reverse p-2">
+    <nav className="flex justify-center h-[88px] p-1 md:p-5 z-50">
+      <div className="flex w-full max-w-[1920px]  p-2 md:p-5 justify-between items-center gap-7 flex-wrap-reverse fixed h-[88px] top-0 bg-white bg-opacity-70 dark:bg-black dark:bg-opacity-70 z-50">
         <h1
           className={`bold text-2xl md:text-4xl font-black`}
         >{`${saudation}`}</h1>
@@ -75,7 +75,7 @@ const Header = () => {
           <ThemeSwitcher />
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 
