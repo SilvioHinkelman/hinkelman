@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/ui/button";
 import ThemeSwitcher from "../SwitchTheme";
 import {
@@ -12,6 +13,12 @@ import { useEffect, useState } from "react";
 import { bungee } from "@/app/fonts";
 
 const Header = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const [time, setTime] = useState(new Date());
   const hours = parseInt(time.getHours().toString().padStart(2, "0"));
   const saudation =
@@ -41,7 +48,7 @@ const Header = () => {
           <h1
             className={`${bungee.className} bg-white text-xs md:text-2xl py-2 px-3 animate-pulse rounded-3xl text-[#ef5a31] ml-auto md:m-auto`}
           >
-            {formatTime(time)}
+            {isClient ? formatTime(time) : ""}
           </h1>
         </div>
         <div className="flex gap-2 ml-auto">

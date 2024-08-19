@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-1 md:p-5">
-      <div className="z-10 w-full max-w-[1920px] items-center justify-between font-mono text-sm flex gap-2 lg:gap-7  px-2">
+      <div className="z-10 w-full max-w-[1920px] items-center justify-between font-mono text-sm flex gap-2 lg:gap-7 px-2 bg-orange-400">
         <div className="flex items-center gap-3 lg:gap-7">
           <div className="relative min-w-[5rem] size-20 md:size-32 xl:size-40 w-100%">
             <Image
@@ -41,15 +41,13 @@ export default function Home() {
           </div>
           <div>
             <h1 className="font-bold text-2xl">Me chamo</h1>
-            <h1 className={`${bungee.className} `}>
-              <TypeAnimation
-                aria-hidden="true"
-                wrapper="h1"
-                cursor={false}
-                className="text sm:text-xl md:text-3xl text-blue-700 border-r-gray-700 dark:text-green-500 font-semibold"
-                sequence={["Silvio da Costa Hinkelman"]}
-              />
-            </h1>
+            <TypeAnimation
+              aria-hidden="true"
+              wrapper="h1"
+              cursor={false}
+              className={`${bungee.className} text sm:text-xl md:text-3xl text-blue-700 border-r-gray-700 dark:text-green-500 font-semibold`}
+              sequence={["Silvio da Costa Hinkelman"]}
+            />
             <TypeAnimation
               key={animationKey}
               sequence={animationSequence}
