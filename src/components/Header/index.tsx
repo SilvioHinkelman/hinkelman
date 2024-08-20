@@ -39,14 +39,17 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex justify-center h-[88px] p-1 md:p-5 z-50">
-      <div className="flex w-full max-w-[1920px]  p-2 md:p-5 justify-between items-center gap-7 flex-wrap-reverse fixed h-[88px] top-0 bg-white bg-opacity-70 dark:bg-black dark:bg-opacity-70 z-50">
+    <nav className="flex justify-center h-[128px] min-[443px]:h-[60px] md:h-[88px] p-1 md:p-5 z-50">
+      <div
+        className="flex w-full max-w-[1920px] p-2 md:p-5 justify-between items-center gap-7 flex-wrap fixed top-0
+       bg-white bg-opacity-70 dark:bg-[#0a0a0a] dark:bg-opacity-70 z-50"
+      >
         <h1
           className={`bold text-2xl md:text-4xl font-black`}
         >{`${saudation}`}</h1>
         <div className="flex justify-center grow">
           <h1
-            className={`${bungee.className} bg-white text-xs md:text-2xl py-2 px-3 animate-pulse rounded-3xl text-[#ef5a31] ml-auto md:m-auto`}
+            className={`${bungee.className} dark:bg-white bg-[#819b7f] text-xs md:text-2xl py-2 px-3 animate-pulse rounded-3xl text-blue-700 dark:text-green-500 ml-auto min-[443px]:m-auto`}
           >
             {isClient ? formatTime(time) : ""}
           </h1>
