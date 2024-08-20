@@ -67,3 +67,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.rotateX:hover img {
+  transform: rotateX(360deg);
+}

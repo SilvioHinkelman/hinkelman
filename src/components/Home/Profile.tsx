@@ -25,36 +25,42 @@ export default function Profile() {
   }, [theme]);
 
   return (
-    <div className="z-10 w-full max-w-[1920px] items-center justify-between font-mono text-sm flex gap-2 lg:gap-7 p-2 bg-[#819b7f] bg-gradient-to-t dark:bg-[#5d50cf] rounded-xl">
-      <div className="flex gap-3 lg:gap-7">
-        <div className="relative min-w-[5rem] size-20 md:size-32 xl:size-40 w-100%">
-          <Image
-            className="rounded-full border-4 border-gray-400 backdrop-contrast-200 transition-all duration-300"
-            src={imageSrc}
-            layout="fill"
-            objectFit="cover"
-            alt="my picture"
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHover}
-          />
-        </div>
-        <div>
-          <h1 className="font-bold text-2xl">Me chamo</h1>
-          <TypeAnimation
-            aria-hidden="true"
-            wrapper="h1"
-            speed={{ type: "keyStrokeDelayInMs", value: 250 }}
-            cursor={false}
-            className={`${bungee.className} text sm:text-xl md:text-3xl text-blue-700 border-r-gray-700 dark:text-green-500 font-semibold`}
-            sequence={["Silvio da Costa Hinkelman"]}
-          />
-          <TypeAnimation
-            key={animationKey}
-            sequence={animationSequence}
-            wrapper="h1"
-            cursor={true}
-            className="text sm:text-xl md:text-2xl border-r-gray-700 "
-          />
+    <div className="z-10 w-full max-w-[1620px] items-center justify-between font-mono text-sm flex gap-2 lg:gap-7">
+      <div
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHover}
+        className="rotateX transition-all duration-300 bg-[#819b7f] bg-gradient-to-t dark:bg-[#5d50cf] rounded-xl md:max-w-[750px]  sm:max-w-[560px] max-w-[430px] w-full p-5 "
+      >
+        <div className="flex gap-3 lg:gap-7 md:items-center">
+          <div className="relative min-w-[5rem] size-20 md:size-32 xl:size-40 w-100%">
+            <Image
+              className="rounded-full border-4 border-gray-400 backdrop-contrast-200 transition-all duration-200"
+              src={imageSrc}
+              layout="fill"
+              objectFit="cover"
+              alt="my picture"
+            />
+          </div>
+          <div>
+            <h1 className="font-bold text-base md:text-2xl mb-[-7px]">
+              Me chamo
+            </h1>
+            <TypeAnimation
+              aria-hidden="true"
+              wrapper="h1"
+              speed={{ type: "keyStrokeDelayInMs", value: 250 }}
+              cursor={false}
+              className={`${bungee.className} text sm:text-xl md:text-3xl text-blue-700 border-r-gray-700 dark:text-green-500 font-semibold`}
+              sequence={["Silvio da Costa Hinkelman"]}
+            />
+            <TypeAnimation
+              key={animationKey}
+              sequence={animationSequence}
+              wrapper="h1"
+              cursor={true}
+              className="text sm:text-xl md:text-2xl border-r-gray-700 "
+            />
+          </div>
         </div>
       </div>
     </div>
