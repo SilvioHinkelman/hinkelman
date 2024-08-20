@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <nav className="flex justify-center h-[128px] min-[443px]:h-[60px] md:h-[88px] p-1 md:p-5 z-50">
       <div
-        className="flex w-full max-w-[1920px] p-2 md:p-5 justify-between items-center gap-7 flex-wrap fixed top-0
+        className="flex w-full max-w-[1660px] p-2 md:p-5 justify-between items-center gap-7 flex-wrap fixed top-0
        bg-white bg-opacity-70 dark:bg-[#0a0a0a] dark:bg-opacity-70 z-50"
       >
         <h1
