@@ -5,7 +5,6 @@ import ThemeSwitcher from "../SwitchTheme";
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@/ui/tooltip";
 import { ButtonsHeader, ButtonsHeaderType } from "@/constants/header";
@@ -55,7 +54,6 @@ const Header = () => {
           </h1>
         </div>
         <div className="flex gap-2 ml-auto">
-          <TooltipProvider>
             {ButtonsHeader.map((btn: ButtonsHeaderType) => {
               return (
                 <Tooltip key={btn.key}>
@@ -74,7 +72,6 @@ const Header = () => {
                 </Tooltip>
               );
             })}
-          </TooltipProvider>
           <ThemeSwitcher />
         </div>
       </div>

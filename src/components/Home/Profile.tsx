@@ -3,7 +3,7 @@
 import Image from "next/image";
 import profileDark from "../../../public/images/photo-dark.jpg";
 import profileWhite from "../../../public/images/photo-white.jpg";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { TypeAnimation } from "react-type-animation";
 import { bungee } from "@/app/fonts";

@@ -2,6 +2,20 @@ import { BsGithub } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaFileDownload } from "react-icons/fa";
 
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaReact, FaBootstrap, FaCss3Alt, FaHtml5 } from "react-icons/fa";
+import { RiNextjsLine, RiTailwindCssFill, RiNodejsFill } from "react-icons/ri";
+import {
+  SiStyledcomponents,
+  SiMui,
+  SiSass,
+  SiShadcnui,
+  SiInsomnia,
+  SiPostcss,
+} from "react-icons/si";
+import { TbBrandTypescript, TbBrandMantine } from "react-icons/tb";
+import { VscGithub, VscVscode } from "react-icons/vsc";
+
 export interface ButtonsHeaderType {
   key: number;
   icon: any;
@@ -120,4 +134,31 @@ export const Jobs: EmployeerType[] = [
       },
     ],
   },
+];
+
+export interface HardSkill {
+  key: number;
+  text: string;
+  icon: JSX.Element;
+}
+
+export const ArrayHardSkills: HardSkill[] = [
+  { key: 1, text: "React", icon: <FaReact /> },
+  { key: 2, text: "Next.js", icon: <RiNextjsLine /> },
+  { key: 3, text: "JavaScript", icon: <IoLogoJavascript /> },
+  { key: 4, text: "TypeScript", icon: <TbBrandTypescript /> },
+  { key: 5, text: "HTML5", icon: <FaHtml5 /> },
+  { key: 6, text: "CSS3", icon: <FaCss3Alt /> },
+  { key: 7, text: "Tailwind CSS", icon: <RiTailwindCssFill /> },
+  { key: 8, text: "Styled-components", icon: <SiStyledcomponents /> },
+  { key: 9, text: "Node.js", icon: <RiNodejsFill /> },
+  { key: 10, text: "Bootstrap", icon: <FaBootstrap /> },
+  { key: 11, text: "Sass", icon: <SiSass /> },
+  { key: 12, text: "Material UI", icon: <SiMui /> },
+  { key: 13, text: "Mantine", icon: <TbBrandMantine  /> },
+  { key: 14, text: "Shadcn UI", icon: <SiShadcnui  size={15}/> },
+  { key: 15, text: "PostCSS", icon: <SiPostcss /> },
+  { key: 16, text: "Insomnia", icon: <SiInsomnia /> },
+  { key: 17, text: "GitHub", icon: <VscGithub /> },
+  { key: 18, text: "VSCode", icon: <VscVscode /> },
 ];
