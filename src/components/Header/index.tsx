@@ -61,7 +61,7 @@ const Header = () => {
                     <a
                       href={btn?.link}
                       target="_blank"
-                      {...(btn?.down && { download: "SilvioHinkelman.pdf" })}
+                      {...(btn?.down && { download: "SilvioHinkelmanFrontEnd.pdf" })}
                     >
                       <Button size="icon">{btn.icon}</Button>
                     </a>

@@ -1,7 +1,7 @@
 "use client";
 
+import { ArrayHardSkills, HardSkill } from "@/constants/hardSkills";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui/tooltip";
-import { ArrayHardSkills, HardSkill } from "@/constants/header";
 
 export default function HardSkills() {
   return (

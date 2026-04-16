@@ -1,7 +1,7 @@
 "use client";
 
 import { bungee } from "@/app/fonts";
-import { EmployeerType, Jobs, Tasks } from "@/constants/header";
+import { EmployeerType, Jobs, Tasks } from "@/constants/experiences";
 import { date, dateDiference } from "@/utils/date";
 
 export default function Description() {

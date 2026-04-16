@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { TypeAnimation } from "react-type-animation";
 import { bungee } from "@/app/fonts";
 import { animationSequence } from "@/constants/header";
+import { Contact } from "./Contact";
 
 export default function Profile() {
   const { theme } = useTheme();
@@ -43,7 +44,7 @@ export default function Profile() {
           </div>
           <div>
             <h1 className="font-bold text-base md:text-2xl mb-[-7px]">
-              Me chamo
+             Olá, me chamo
             </h1>
             <TypeAnimation
               aria-hidden="true"
@@ -60,6 +61,7 @@ export default function Profile() {
               cursor={true}
               className="text sm:text-xl md:text-2xl border-r-gray-700 "
             />
+             <Contact />
           </div>
         </div>
       </div>
