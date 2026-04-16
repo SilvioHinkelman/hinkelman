@@ -18,8 +18,8 @@ export default function Home() {
       <Profile />
       <HardSkills />
       <SoftSkills />
-      <Projects />
       <Description />
+      <Projects />
     </main>
   );
 }
